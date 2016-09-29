@@ -1,12 +1,64 @@
-﻿<Window x:Class="SerwerDrukuZebra.MainWindow"
+﻿<Window x:Name="MainForm" x:Class="SerwerDrukuZebra.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SerwerDrukuZebra"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Serwer Druku Zebra" Height="461" Width="281" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Background>
+        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+    </Window.Background>
     <Grid>
-        
+        <Menu x:Name="menuBar" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="267" Margin="0,0,-3,0">
+            <MenuItem Header="Program">
+                <MenuItem Header="Create XML File"/>
+                <MenuItem Header="Create Back Up"/>
+                <Separator></Separator>
+                <MenuItem Header="Delete XML File"/>
+                <Separator></Separator>
+                <MenuItem Header="Exit App"/>
+            </MenuItem>
+            <MenuItem Header="About"/>
+        </Menu>
+        <GroupBox x:Name="datafield" Header="Enter Data" Margin="10,27,10,0" Height="318" VerticalAlignment="Top">
+            <Grid Margin="0,0,-2,6">
+                <TextBlock x:Name="magazyn" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Wybierz magazyn:" VerticalAlignment="Top" Height="22" TextAlignment="Right"/>
+                <TextBlock x:Name="gatblachy" HorizontalAlignment="Left" Margin="10,37,0,0" TextWrapping="Wrap" Text="Gatunek blachy:" VerticalAlignment="Top" Height="22" Width="96"/>
+                <TextBlock x:Name="typblachy" HorizontalAlignment="Left" Margin="10,64,0,0" TextWrapping="Wrap" Text="Typ blachy:" VerticalAlignment="Top" Height="22" Width="96"/>
+                <TextBlock x:Name="rodzblachy" HorizontalAlignment="Left" Margin="10,91,0,0" TextWrapping="Wrap" Text="Rodzaj blachy:" VerticalAlignment="Top" Height="22" Width="96"/>
+
+                <ComboBox x:Name="cmb_magazyn" HorizontalAlignment="Left" Margin="122,10,0,0" VerticalAlignment="Top" Width="102">
+                </ComboBox>
+                <TextBox x:Name="txt_gatblachy" HorizontalAlignment="Left" Height="22" Margin="122,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+
+                <RadioButton x:Name="rb_arkusz" Content="Arkusz" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="122,64,0,0" VerticalAlignment="Top" Width="58" Height="22" IsChecked="True"/>
+                <RadioButton x:Name="rb_krag" Content="Krąg" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="180,64,0,0" VerticalAlignment="Top" Width="44" Height="22"/>
+
+                <ComboBox x:Name="cmb_rodzblachy" HorizontalAlignment="Left" Margin="122,91,0,0" VerticalAlignment="Top" Width="102"/>
+
+                <TextBlock x:Name="szer" HorizontalAlignment="Left" Margin="10,131,0,0" TextWrapping="Wrap" Text="szer.:" VerticalAlignment="Top" Height="23" Width="59" Padding="2" TextAlignment="Right"/>
+                <TextBlock x:Name="mkw" HorizontalAlignment="Left" Margin="10,160,0,0" TextWrapping="Wrap" Text="metr kw.:" VerticalAlignment="Top" Height="23" Width="59" Padding="2" TextAlignment="Right"/>
+                <TextBlock x:Name="wys" HorizontalAlignment="Left" Margin="127,131,0,0" TextWrapping="Wrap" Text="wys.:" VerticalAlignment="Top" Height="23" Width="49" Padding="2" TextAlignment="Right"/>
+                <TextBlock x:Name="masa" HorizontalAlignment="Left" Margin="127,160,0,0" TextWrapping="Wrap" Text="masa [t]:" VerticalAlignment="Top" Height="22" Width="49" Padding="2" TextAlignment="Right"/>
+
+                <TextBox x:Name="txt_szer" HorizontalAlignment="Left" Height="23" Margin="74,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43"/>
+                <TextBox x:Name="txt_mkw" HorizontalAlignment="Left" Height="22" Margin="74,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43"/>
+                <TextBox x:Name="txt_wys" HorizontalAlignment="Left" Height="23" Margin="181,131,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="43" RenderTransformOrigin="1.07,0.609"/>
+                <TextBox x:Name="txt_masa" HorizontalAlignment="Left" Height="22" Margin="181,160,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="43"/>
+                <Button x:Name="btn_add" Content="Add new element" HorizontalAlignment="Left" Margin="10,198,0,0" VerticalAlignment="Top" Width="214" Height="23"/>
+                <Button x:Name="btn_addrandom" Content="Add random data" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" Width="214" Height="23"/>
+                <Button x:Name="btn_printZPL" Content="PRINT" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" Width="214" Height="23"/>
+
+
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="statusmsg" Header="Status Message"  Margin="10,345,10,16">
+            <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="0,4,0,0" Width="233" Height="35" VerticalAlignment="Top"/>
+        </GroupBox>
     </Grid>
 </Window>
+
+
+ 
+
