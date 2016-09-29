@@ -12,14 +12,14 @@
     <Grid>
         <Menu x:Name="menuBar" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="267" Margin="0,0,-3,0">
             <MenuItem Header="Program">
-                <MenuItem Header="Create XML File"/>
-                <MenuItem Header="Create Back Up"/>
+                <MenuItem x:Name="createXMLfile" Header="Create XML File" Click="createXMLfile_Click"/>
+                <MenuItem x:Name="createbackup" Header="Create Back Up" Click="createbackup_Click"/>
                 <Separator></Separator>
-                <MenuItem Header="Delete XML File"/>
+                <MenuItem x:Name="deleteXMLfile" Header="Delete XML File" Click="deleteXMLfile_Click"/>
                 <Separator></Separator>
-                <MenuItem Header="Exit App"/>
+                <MenuItem x:Name="closeApp" Header="Exit App" Click="closeApp_Click"/>
             </MenuItem>
-            <MenuItem Header="About"/>
+            <MenuItem x:Name="mb_About" Header="About" Click="mbAbout_Click"/>
         </Menu>
         <GroupBox x:Name="datafield" Header="Enter Data" Margin="10,27,10,0" Height="318" VerticalAlignment="Top">
             <Grid Margin="0,0,-2,6">
@@ -46,15 +46,15 @@
                 <TextBox x:Name="txt_mkw" HorizontalAlignment="Left" Height="22" Margin="74,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43"/>
                 <TextBox x:Name="txt_wys" HorizontalAlignment="Left" Height="23" Margin="181,131,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="43" RenderTransformOrigin="1.07,0.609"/>
                 <TextBox x:Name="txt_masa" HorizontalAlignment="Left" Height="22" Margin="181,160,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="43"/>
-                <Button x:Name="btn_add" Content="Add new element" HorizontalAlignment="Left" Margin="10,198,0,0" VerticalAlignment="Top" Width="214" Height="23"/>
-                <Button x:Name="btn_addrandom" Content="Add random data" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" Width="214" Height="23"/>
+                <Button x:Name="btn_add" Content="Add new element" HorizontalAlignment="Left" Margin="10,198,0,0" VerticalAlignment="Top" Width="214" Height="23" Click="btn_add_Click"/>
+                <Button x:Name="btn_addrandom" Content="Add random data" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" Width="214" Height="23" Click="btn_addrandom_Click"/>
                 <Button x:Name="btn_printZPL" Content="PRINT" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" Width="214" Height="23"/>
 
 
             </Grid>
         </GroupBox>
         <GroupBox x:Name="statusmsg" Header="Status Message"  Margin="10,345,10,16">
-            <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="0,4,0,0" Width="233" Height="35" VerticalAlignment="Top"/>
+            <Label x:Name="statusLabel" HorizontalAlignment="Left" Margin="0,4,0,0" Width="233" Height="35" VerticalAlignment="Top"/>
         </GroupBox>
     </Grid>
 </Window>
