@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SerwerDrukuZebra"
         mc:Ignorable="d"
-        Title="Serwer Druku Zebra" Height="461" Width="281" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Serwer Druku Zebra" Height="484" Width="278.075" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Background>
         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
     </Window.Background>
-    <Grid>
+    <Grid Margin="0,0,-5,-19" HorizontalAlignment="Left" Width="262">
         <Menu x:Name="menuBar" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="267" Margin="0,0,-3,0">
             <MenuItem Header="Program">
                 <MenuItem x:Name="createXMLfile" Header="Create XML File" Click="createXMLfile_Click"/>
@@ -21,40 +21,57 @@
             </MenuItem>
             <MenuItem x:Name="mb_About" Header="About" Click="mbAbout_Click"/>
         </Menu>
-        <GroupBox x:Name="datafield" Header="Enter Data" Margin="10,27,10,0" Height="318" VerticalAlignment="Top">
-            <Grid Margin="0,0,-2,6">
-                <TextBlock x:Name="magazyn" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Wybierz magazyn:" VerticalAlignment="Top" Height="22" TextAlignment="Right"/>
-                <TextBlock x:Name="gatblachy" HorizontalAlignment="Left" Margin="10,37,0,0" TextWrapping="Wrap" Text="Gatunek blachy:" VerticalAlignment="Top" Height="22" Width="96"/>
-                <TextBlock x:Name="typblachy" HorizontalAlignment="Left" Margin="10,64,0,0" TextWrapping="Wrap" Text="Typ blachy:" VerticalAlignment="Top" Height="22" Width="96"/>
-                <TextBlock x:Name="rodzblachy" HorizontalAlignment="Left" Margin="10,91,0,0" TextWrapping="Wrap" Text="Rodzaj blachy:" VerticalAlignment="Top" Height="22" Width="96"/>
+        <GroupBox x:Name="datafield" Header="Enter Data" Margin="10,27,0,0" Height="338" VerticalAlignment="Top" HorizontalAlignment="Left" Width="242">
+            <Grid Margin="0,0,0,11" HorizontalAlignment="Left" Width="230">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="magazyn" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Choose warehouse:" VerticalAlignment="Top" Height="22" TextAlignment="Right"/>
+                <TextBlock x:Name="gatblachy" HorizontalAlignment="Left" Margin="10,37,0,0" TextWrapping="Wrap" Text="Metal sheet brand:" VerticalAlignment="Top" Height="22" Width="103" TextAlignment="Right"/>
+                <TextBlock x:Name="typblachy" HorizontalAlignment="Left" Margin="10,64,0,0" TextWrapping="Wrap" Text="Metal sheet type:" VerticalAlignment="Top" Height="22" Width="103" TextAlignment="Right"/>
+                <TextBlock x:Name="rodzblachy" HorizontalAlignment="Left" Margin="10,91,0,0" TextWrapping="Wrap" Text="Metal sheet sort:" VerticalAlignment="Top" Height="22" Width="103" TextAlignment="Right"/>
 
-                <ComboBox x:Name="cmb_magazyn" HorizontalAlignment="Left" Margin="122,10,0,0" VerticalAlignment="Top" Width="102">
+                <ComboBox x:Name="cmb_magazyn" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="122,10,0,0" VerticalAlignment="Top" Width="102" IsReadOnly="True">
+                    <ComboBoxItem Content="MAG1"/>
+                    <ComboBoxItem Content="MAG2"/>
+                    <ComboBoxItem Content="SKLAD1"/>
+                    <ComboBoxItem Content="HALA1"/>
                 </ComboBox>
-                <TextBox x:Name="txt_gatblachy" HorizontalAlignment="Left" Height="22" Margin="122,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+                <TextBox x:Name="txt_gatblachy" MaxLength="15" HorizontalAlignment="Left" Height="22" Margin="122,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
 
-                <RadioButton x:Name="rb_arkusz" Content="Arkusz" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="122,64,0,0" VerticalAlignment="Top" Width="58" Height="22" IsChecked="True"/>
-                <RadioButton x:Name="rb_krag" Content="Krąg" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="180,64,0,0" VerticalAlignment="Top" Width="44" Height="22"/>
+                <RadioButton x:Name="rb_arkusz" Content="Plate" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="122,64,0,0" VerticalAlignment="Top" Width="58" Height="22" IsChecked="True"/>
+                <RadioButton x:Name="rb_krag" Content="Coil" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="180,64,0,0" VerticalAlignment="Top" Width="44" Height="22"/>
 
-                <ComboBox x:Name="cmb_rodzblachy" HorizontalAlignment="Left" Margin="122,91,0,0" VerticalAlignment="Top" Width="102"/>
+                <ComboBox x:Name="cmb_rodzblachy" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="122,91,0,0" VerticalAlignment="Top" Width="102" IsReadOnly="True">
+                    <ComboBoxItem Content="Steel"/>
+                    <ComboBoxItem Content="Zincic"/>
+                    <ComboBoxItem Content="Copper"/>
+                    <ComboBoxItem Content="Aluminium"/>
+                </ComboBox>
+                <TextBlock x:Name="szer" HorizontalAlignment="Left" Margin="10,131,0,0" TextWrapping="Wrap" Text="Width:" VerticalAlignment="Top" Height="23" Width="59" Padding="2" TextAlignment="Right"/>
+                <TextBlock x:Name="mkw" HorizontalAlignment="Left" Margin="10,160,0,0" TextWrapping="Wrap" Text="ca.:" VerticalAlignment="Top" Height="23" Width="59" Padding="2" TextAlignment="Right"/>
+                <TextBlock x:Name="wys" HorizontalAlignment="Left" Margin="127,131,0,0" TextWrapping="Wrap" Text="Height:" VerticalAlignment="Top" Height="23" Width="49" Padding="2" TextAlignment="Right"/>
+                <TextBlock x:Name="masa" HorizontalAlignment="Left" Margin="127,160,0,0" TextWrapping="Wrap" Text="Weight: [t]:" VerticalAlignment="Top" Height="22" Width="49" Padding="2" TextAlignment="Right"/>
 
-                <TextBlock x:Name="szer" HorizontalAlignment="Left" Margin="10,131,0,0" TextWrapping="Wrap" Text="szer.:" VerticalAlignment="Top" Height="23" Width="59" Padding="2" TextAlignment="Right"/>
-                <TextBlock x:Name="mkw" HorizontalAlignment="Left" Margin="10,160,0,0" TextWrapping="Wrap" Text="metr kw.:" VerticalAlignment="Top" Height="23" Width="59" Padding="2" TextAlignment="Right"/>
-                <TextBlock x:Name="wys" HorizontalAlignment="Left" Margin="127,131,0,0" TextWrapping="Wrap" Text="wys.:" VerticalAlignment="Top" Height="23" Width="49" Padding="2" TextAlignment="Right"/>
-                <TextBlock x:Name="masa" HorizontalAlignment="Left" Margin="127,160,0,0" TextWrapping="Wrap" Text="masa [t]:" VerticalAlignment="Top" Height="22" Width="49" Padding="2" TextAlignment="Right"/>
+                <TextBox x:Name="txt_szer" MaxLength="5" HorizontalAlignment="Left" Height="23" Margin="74,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" PreviewTextInput="preventWrongInput" DataObject.Pasting="TextBoxPasting"/>
+                <TextBox x:Name="txt_mkw" MaxLength="5" HorizontalAlignment="Left" Height="22" Margin="74,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" PreviewTextInput="preventWrongInput" DataObject.Pasting="TextBoxPasting"/>
+                <TextBox x:Name="txt_wys" MaxLength="5" HorizontalAlignment="Left" Height="23" Margin="181,131,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="43" RenderTransformOrigin="1.07,0.609" PreviewTextInput="preventWrongInput" DataObject.Pasting="TextBoxPasting"/>
+                <TextBox x:Name="txt_masa" MaxLength="5" HorizontalAlignment="Left" Height="22" Margin="181,160,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="43" PreviewTextInput="preventWrongInput" DataObject.Pasting="TextBoxPasting"/>
 
-                <TextBox x:Name="txt_szer" HorizontalAlignment="Left" Height="23" Margin="74,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43"/>
-                <TextBox x:Name="txt_mkw" HorizontalAlignment="Left" Height="22" Margin="74,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43"/>
-                <TextBox x:Name="txt_wys" HorizontalAlignment="Left" Height="23" Margin="181,131,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="43" RenderTransformOrigin="1.07,0.609"/>
-                <TextBox x:Name="txt_masa" HorizontalAlignment="Left" Height="22" Margin="181,160,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="43"/>
                 <Button x:Name="btn_add" Content="Add new element" HorizontalAlignment="Left" Margin="10,198,0,0" VerticalAlignment="Top" Width="214" Height="23" Click="btn_add_Click"/>
                 <Button x:Name="btn_addrandom" Content="Add random data" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" Width="214" Height="23" Click="btn_addrandom_Click"/>
-                <Button x:Name="btn_printZPL" Content="PRINT" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" Width="214" Height="23"/>
+                <Button x:Name="btn_printZPL" Content="PRINT" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top" Width="214" Height="23" Click="btn_printZPL_Click "/>
 
-
+                <TextBlock x:Name="drukarka" HorizontalAlignment="Left" Margin="11,253,0,0" TextWrapping="Wrap" Text="Choose printer:" VerticalAlignment="Top" Height="22" TextAlignment="Right" Width="102"/>
+                <ComboBox x:Name="cmb_printer" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="122,253,0,0" VerticalAlignment="Top" Width="102">
+                    <ComboBoxItem Content="office"/>
+                    <ComboBoxItem Content="warehouse"/>
+                    <ComboBoxItem Content="production"/>
+                </ComboBox>
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="statusmsg" Header="Status Message"  Margin="10,345,10,16">
-            <Label x:Name="statusLabel" HorizontalAlignment="Left" Margin="0,4,0,0" Width="233" Height="35" VerticalAlignment="Top"/>
+        <GroupBox x:Name="statusmsg" Header="Status Message"  Margin="10,370,10,0" Height="66" VerticalAlignment="Top">
+            <Label x:Name="statusLabel" HorizontalAlignment="Left" Margin="0,4,-2,0" Width="232" Height="35" VerticalAlignment="Top"/>
         </GroupBox>
     </Grid>
 </Window>

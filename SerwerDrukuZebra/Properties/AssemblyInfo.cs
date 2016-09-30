@@ -7,10 +7,10 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SerwerDrukuZebra")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Serwer Druku Zebra")]
+[assembly: AssemblyDescription("Projekt aplikacji do drukowania etykiet z danymi na drukarkach zebra")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("DCT VISUAL STUDIO")]
 [assembly: AssemblyProduct("SerwerDrukuZebra")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
